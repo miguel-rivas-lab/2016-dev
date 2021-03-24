@@ -1,0 +1,108 @@
+section.projects {
+	text-align: center;
+	color: $cyan;
+	background: #fff url("../img/landing_cloud_middle.png") bottom left no-repeat;
+	background-size: contain;
+	padding-top: 620px;
+	min-height: 740px;
+	position: relative;
+
+	@media (max-width: 800px) {
+		padding-top: 0;
+	}
+
+	@media (max-width: 500px) {
+		padding-top: 0;
+		padding-bottom: 120px;
+	}
+
+	button, a {
+		text-align: left;
+		vertical-align: top;
+		display: inline-block;
+		border: none;
+		background-color: transparent;
+		box-sizing: border-box;
+		padding: 0;
+		transform: rotateZ(0deg);
+		transition: all $transition ease;
+		margin: 10px 20px 30px;
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+
+		@media (max-width: 500px) {
+			margin: 10px 10px 30px;
+			width: 200px;
+		}
+
+		&:hover {
+			transform: rotateZ(5deg);
+		}
+
+		&:focus, &:active {
+			outline: none;
+		}
+
+		img {
+			height: 150px;
+		}
+	}
+
+	.city {
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		height: 430px;
+
+		@media (max-width: 650px) {
+			height: 250px;
+		}
+
+		.mountains {
+			bottom: -260px;
+			z-index: 2;
+			background: url(../img/landing_mountains.png) no-repeat bottom center;
+
+			@media (max-width: 900px) {
+				bottom: -165px;
+			}
+
+			@media (max-width: 500px) {
+				bottom: -169px;
+			}
+
+		}
+
+		.giant {
+			bottom: 0;
+			z-index: 1;
+			background: url(../img/landing_giant_character.png) no-repeat bottom center;
+			transition: background-position-y 5s;
+
+			@media (max-width: 800px) {
+				bottom: -100px;
+				background-size: 50%;
+			}
+		}
+
+		.mountains,
+		.giant {
+			position: absolute;
+			width: 120%;
+			height: 1300px;
+			background-size: contain;
+			left: -10%;
+		}
+	}
+}
+
+body.hideMonster.animations {
+	animation-name: shake;
+	animation-duration: 200ms;
+	animation-iteration-count: 14;
+
+	.city .giant {
+		background-position-y: 1300px;
+	}
+}

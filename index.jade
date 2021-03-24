@@ -1,0 +1,111 @@
+<?php include('php/functions.php'); ?>
+doctype html
+html
+	head
+		include jade/vars
+		include jade/functions
+		include jade/metatags
+		link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700", rel="stylesheet", type="text/css")
+		link(href="css/vendor/venobox.css", rel="stylesheet")
+		link(href="css/application.css", rel="stylesheet")
+		link(href="css/print.css", rel="stylesheet", media="print")
+		include jade/analytics
+
+	body.animations
+		aside.texture
+		aside.loading
+		include jade/sections/nav
+
+		main
+
+
+			header
+				h1
+					| Hello
+					strong <?php if(isset($_GET["name"])){echo $_GET["name"];} ?>
+				img.cloud.c01(src="img/cloud.png")
+				img.cloud.c02(src="img/cloud.png")
+
+				a.fa.fa-arrow-down(href="#aboutme")
+
+
+			section.letter#aboutme
+				.container
+					p hi!
+
+					h2 My name is Miguel Rivas, <small>I'm a Web Designer living in Las Vegas, NV</small>
+
+					p I'm a big fan of children's books with outstanding design and illustrations. One of my favorites is "Black Book of Colors" which tries to explain colors to blind people.
+
+					p Usually, I work with PUG (HTML), SASS (CSS), and the Adobe Suite (Illustrator, Photoshop, Indesign, Flash and Premiere). I also love Git and have been known to roll up my sleeves and work with basic Ruby on Rails and PHP to push the project forward.
+
+
+			section#projects.projects
+
+				a(href=to_drlogic, target="_blank")
+					+imgTag( "/portfolio/drlogic.jpg" )
+
+				a(href=to_apap, target="_blank")
+					+imgTag( "/portfolio/apap.jpg" )
+
+				a(href=to_presidente, target="_blank")
+					+imgTag( "/portfolio/ptf-loader.jpg" )
+
+				a(href=to_bpr, target="_blank")
+					+imgTag( "/portfolio/bprbank.jpg" )
+
+				a(href="https://player.vimeo.com/video/210372722" data-autoplay="true" data-vbtype="vimeo").venobox
+					+imgTag( "/portfolio/videos.jpg" )
+
+				img.cloud.c03(src="img/cloud.png")
+
+				.city
+					.giant
+					.mountains
+
+
+			section.ground
+				.grass
+					img.ribbon(src="img/ribbon.png")
+				img.top(src="img/landing_earth_ornament_top.png")
+				.body
+				.bottom
+					.pattern_02
+					.pattern_01
+
+
+			section.references
+				img.ornament_01(src="img/landing_wall ornament big.png")
+				img.ornament_02(src="img/landing_wall ornament small.png")
+				.content
+					h2#references
+						| Super Cool
+						strong References
+
+					article.rene
+						img.preview(src="img/landing_ref 03.png")
+						p.title RENÉ OLIVO
+						p.subtitle DIGITAL DIRECTOR AT CAPITAL DBG
+
+					article.josue
+						img.preview(src="img/landing_ref 01.png")
+						p.title JOSUE ABREU
+						p.subtitle SOFTWARE ENGINEER AT GOCARDLESS
+						p.subtitle PREVIOUS CEO/CO-FOUNDER AT PIXEL PERFECT TREE
+
+
+			footer
+				.link
+					a.fa.fa-linkedin(href=linkedin, target="_blank", alt="Linkedin Profile")
+					a.fa.fa-codepen(href=codepen, target="_blank", alt="Codepen Profile")
+			
+					a.fa.fa-globe(href=portfolioA, target="_blank", alt="Portfolio")
+					a.fa.fa-globe(href=portfolioC, target="_blank", alt="Portfolio")
+			
+
+
+			include jade/sections/printBody
+
+		script(src="js/vendor/jquery-1.11.2.min.js")
+		script(src="js/vendor/venobox.min.js")
+		script(src="js/application.js")

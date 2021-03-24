@@ -1,0 +1,147 @@
+@import 'library/vars';
+@import 'library/functions';
+@import 'library/typography';
+@import 'library/keyframes';
+
+header,
+section.projects,
+section.ground,
+section.references,
+footer,
+aside.modal,
+aside.texture,
+nav
+{
+	display: none;
+}
+
+section.letter
+{
+	.container {
+		margin-top: 150px;
+		font-size: 10pt;
+		max-width: 500px;
+
+		&:before,
+		&:after
+		{
+			display: none;
+		}
+
+		small {
+			display: inline;
+		}
+
+		strong, small {
+			color: inherit;
+			font-style: normal;
+			font-size: inherit;
+			font-family: $f_montserrat;
+			float: none;
+			text-transform: inherit;
+			line-height: 1;
+			margin-right: 0;
+			margin-bottom: 0;
+			font-weight: normal;
+		}
+
+		em {
+			color: #00a99d;
+		}
+
+		h2 {
+			font-family: $f_montserrat;
+			font-size: 10pt;
+			color: #000;
+			font-weight: normal;
+		}
+
+		p:first-child {
+			font-family: $f_bpreplay;
+			font-size: 38pt;
+			font-weight: bold;
+			line-height: 1;
+			margin: 15px 18px 0px 0px;
+			text-transform: uppercase;
+			color: #00a99d;
+			display: block !important;
+		}
+
+	}
+
+}
+
+section.printBody
+{
+	display: block !important;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	overflow: hidden;
+
+	.borderLine {
+		border: 2px dashed #27aae1;
+		width: 94%;
+		height: 96%;
+		position: absolute;
+		z-index: 5;
+		top: 2%;
+		left: 3%;
+	}
+
+	.head {
+		margin: 70px auto;
+		display: inline-block;
+		width: 240px;
+		position: relative;
+		z-index: 5;
+	}
+
+	.city {
+		width: 120%;
+		position: absolute;
+		bottom: -120px;
+		left: -10%;
+		z-index: 2;
+	}
+
+	.qrCode {
+		position: absolute;
+		bottom: 40px;
+		left: 40px;
+		width: 100px;
+		z-index: 3;
+	}
+
+	.character {
+		position: absolute;
+		bottom: 100px;
+		right: 30%;
+		width: 300px;
+		z-index: 1;
+	}
+
+	.cloudMiddle {
+		position: absolute;
+		width: 400px;
+		top: 400px;
+		left: 0;
+		z-index: 0;
+	}
+
+	.cloudTop {
+		position: absolute;
+		width: 500px;
+		top: 0px;
+		right: 0;
+		z-index: 0;
+	}
+}
+
+@page {
+	size: auto;
+	margin: 5mm;
+}
